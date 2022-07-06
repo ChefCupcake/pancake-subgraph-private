@@ -4,24 +4,5 @@ type CakePool @entity {
     blockNumber: BigInt!
     maxLockDuration: BigInt!
     totalLocked: BigInt!
-    users: [User!]! @derivedFrom(field: "cakePool")
     updatedAt: BigInt!
-}
-
-type User @entity {
-    id: ID!
-    totalLocked: BigInt!
-    duration: BigInt!
-    lockStartTime: BigInt!
-    lockEndTime: BigInt!
-    locked: Boolean
-    unlockedByUser: Boolean
-    cakePool: CakePool!
-}
-
-type BlockInfo @entity {
-    "ID (hash)"
-    id: ID!
-    "Last run blockNumber"
-    lastBlockNumber: BigInt!
 }
